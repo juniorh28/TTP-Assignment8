@@ -1,5 +1,12 @@
-import TableRow from './TableRow';
+import React, { Component } from 'react'
+import TableRow from './TableRow'
 
-export default function Table () {
-   return <TableRow />;
+export default class Table extends Component {
+    render() {
+        return (
+            <div>
+                <TableRow />
+            </div>
+        )
+    }
 }

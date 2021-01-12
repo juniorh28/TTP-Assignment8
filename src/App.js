@@ -9,22 +9,43 @@ class App extends Component {
     super(props)
     this.state = {
       color: "",
-      rows: [<TableRow />]
+      rows: [[<TableRow />]],
+      rowCount: 0,
+      columnCount: 0
     }
   }
   
   addRow = () => {
-    var joined = this.state.rows.concat(<TableRow />);
-    this.setState({ rows: joined })
+    var joined = this.state.rows.concat([<TableRow />]);
+    this.setState({
+      rows: joined,
+      rowCount: this.state.rowCount + 1
+    })
   }
+
+  addColumn = () => {
+    this.setState({columnCount: this.state.columnCount + 1})
+    let newColumn = []
+    for (let x = 0; x < this.state.rowCount; x++) {
+        newColumn.push(<TableCell />)
+    }
+    let original = this.state.rows
+    console.log(this.state.rows.push(newColumn))
+    this.setState({
+      rows: joined
+    })
+  }
+
+
+  
 
   render() {
     return (
       <div className="App">
         <div class="bar">
             <ul>
-                <button class="addRowButton" onClick= {this.addRow}> Add Row </button>
-                <button class="addColButton" > Add Column </button>
+                <button class="addRowButton" onClick={this.addRow}> Add Row </button>
+                <button class="addColButton" onClick={this.addColumn}> Add Column </button>
                 <button class="removeRowButton" > Remove Row </button>
                 <button class="removeColButton" > Remove Column </button>
                 <select >
