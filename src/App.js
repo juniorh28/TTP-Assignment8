@@ -9,12 +9,13 @@ class App extends Component {
     super(props)
     this.state = {
       color: "",
-      grid: []
+      rows: [<TableRow />]
     }
   }
   
   addRow = () => {
-    return <Table />
+    var joined = this.state.rows.concat(<TableRow />);
+    this.setState({ rows: joined })
   }
 
   render() {
@@ -45,7 +46,9 @@ class App extends Component {
                 <button class="fillAll" > Fill All </button>
                 <button class="fillUncolored" > Fill Uncolored </button>
             </ul>	
-            {/* <Table /> */}
+            <div class="table">
+              {this.state.rows}
+            </div>
         </div>
       </div>
     );
