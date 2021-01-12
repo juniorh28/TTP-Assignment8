@@ -8,19 +8,25 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      color: "",
+      grid: []
     }
   }
   
+  addRow = () => {
+    return <Table />
+  }
+
   render() {
     return (
       <div className="App">
         <div class="bar">
             <ul>
-                <button class="addRowButton" onClick= {true}> Add Row </button>
-                <button class="addColButton" onClick= {true}> Add Column </button>
-                <button class="removeRowButton" onClick= {true}> Remove Row </button>
-                <button class="removeColButton" onClick= {true}> Remove Column </button>
-                <select onChange={true}>
+                <button class="addRowButton" onClick= {this.addRow}> Add Row </button>
+                <button class="addColButton" > Add Column </button>
+                <button class="removeRowButton" > Remove Row </button>
+                <button class="removeColButton" > Remove Column </button>
+                <select >
                     <option>Blue</option>
                     <option>Red</option>
                     <option>White</option>
@@ -35,9 +41,9 @@ class App extends Component {
                     <option>Orange</option>
                     <option>Purple</option>
                 </select>
-                <button onClick={true}> Clear </button>
-                <button class="fillAll" onclick= {true}> Fill All </button>
-                <button class="fillUncolored" onclick={true}> Fill Uncolored </button>
+                <button > Clear </button>
+                <button class="fillAll" > Fill All </button>
+                <button class="fillUncolored" > Fill Uncolored </button>
             </ul>	
             {/* <Table /> */}
         </div>
